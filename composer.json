@@ -1,0 +1,17 @@
+{
+	"name"             : "agrilife/future-students",
+	"description"      : "Template for future students landing page",
+	"license"          : "GPL-2.0",
+	"authors"          : [
+		{
+			"name" : "Zachary Watkins",
+			"email": "watkinza@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"autoload"         : {
+		"psr-4": {
+			"AgriLife\\FutureStudents\\": "src"
+		}
+	}
+}
