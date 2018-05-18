@@ -147,8 +147,10 @@ function ag_fust_content()
           echo '<div class="right-side">';
         }
 
-        echo sprintf('<div class="item-%s"><img src="%s"><span class="tagline">%s <span class="citation">%s</span></span></div>',
-          $key,
+        $class = $key > 0 ? "item-{$key} item-row" : "item-{$key}";
+
+        echo sprintf('<div class="%s"><div class="item-cell"><img src="%s"></div><div class="item-cell"><span class="tagline">%s <span class="citation">%s</span></span></div></div>',
+          $class,
           $value['image']['url'],
           $value['title'],
           $value['source']

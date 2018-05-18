@@ -119,15 +119,18 @@
 	overflow: hidden;
 	position: relative;
 	padding-top: 91px;
-	padding-left: 430px;
+	padding-right: 43px;
 	box-sizing: border-box;
 	white-space: nowrap;
+	text-align: right;
+  background-position: center center;
 }
 
 .entry-content .campus-info .actions,
 .entry-content .campus-info > a.button {
 	display: inline-block;
 	vertical-align: top;
+	text-align: center;
 }
 
 .entry-content .campus-info .actions {
@@ -146,7 +149,7 @@
 .entry-content .campus-info > a.button {
 	width: auto;
 	margin-left: 16px;
-	max-width: 400px;
+	max-width: 338px;
 	border: 0 none;
 }
 
@@ -170,10 +173,8 @@
 
 .entry-content .national-recognition .left-side,
 .entry-content .national-recognition .right-side {
-	display: inline-block;
-	float: none!important;
+	display: table-cell;
 	vertical-align: top;
-	white-space: normal;
 }
 
 .entry-content .national-recognition .left-side {
@@ -186,7 +187,7 @@
 
 .entry-content .national-recognition .left-side .tagline {
 	position: absolute;
-	bottom: 0;
+	top: 100px;
 	height: 90px;
 	left: 0;
 	width: 100%;
@@ -199,20 +200,23 @@
 	padding-left: 16px;
 	width: 686px;
 	box-sizing: border-box;
+	white-space: normal;
 }
 
-.entry-content .national-recognition .right-side > div {
-	margin-top: 16px;
+.entry-content .national-recognition .right-side .item-cell {
+	display: table-cell;
+	vertical-align: top;
+	padding-top: 16px;
 }
 
-.entry-content .national-recognition .right-side > div:after {
+.entry-content .national-recognition .right-side .item-row:first-child .item-cell {
+	padding-top: 0;
+}
+
+.entry-content .national-recognition .right-side .item-cell:after {
 	content: "";
 	display: block;
 	clear: both;
-}
-
-.entry-content .national-recognition .right-side > div:first-child {
-	margin-top: 0;
 }
 
 .entry-content .national-recognition .right-side img {
