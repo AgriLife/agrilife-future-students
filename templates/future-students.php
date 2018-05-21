@@ -72,13 +72,13 @@ function ag_fust_content()
     <div class="student-status"><div><a class="button" href="#">Freshman</a></div><div><a class="button" href="#">Graduate</a></div><div><a class="button" href="#">Online</a></div><div><a class="button" href="#">Transfer</a></div></div><?php
 
   if ( get_field( 'summary_1' ) || get_field( 'summary_2' ) ){ ?>
-    <div class="summaries"><?php
+    <div class="summaries row"><?php
     if ( get_field( 'summary_1' ) ){
-      ?><div class="one-of-two"><?php the_field('summary_1'); ?></div><?php
+      ?><div class="columns small-12 medium-6 large-6"><?php the_field('summary_1'); ?></div><?php
     }
 
     if ( get_field( 'summary_2' ) ){
-      ?><div class="one-of-two"><?php the_field('summary_2'); ?></div><?php
+      ?><div class="columns small-12 medium-6 large-6"><?php the_field('summary_2'); ?></div><?php
     }
     ?></div><?php
   }
@@ -101,8 +101,7 @@ function ag_fust_content()
     <div class="campus-info"><?php
     $campus_info = get_field('campus_info');
 
-    ?>
-      <div class="actions"><?php
+    ?><div class="actions"><?php
 
     foreach ($campus_info['actions'] as $key => $value) {
 
@@ -117,6 +116,8 @@ function ag_fust_content()
 
     if(!empty($campus_info['button']['button_image'])){
 
+      ?><div class="second-button"><?php
+
       if(!empty($campus_info['button']['button_link'])){
         ?><a class="button" href="<?php echo $campus_info['button']['button_link']; ?>"><?php
       }
@@ -130,6 +131,8 @@ function ag_fust_content()
         ?></a><?php
       }
 
+      ?></div><?php
+
     }
 
     ?></div>
@@ -142,22 +145,34 @@ function ag_fust_content()
       foreach ( $items as $key => $value) {
 
         if($key == 0){
-          echo '<div class="left-side">';
+          ?><div class="left-side"><?php
         } else if($key == 1){
-          echo '<div class="right-side">';
+          ?><div class="right-side"><?php
         }
 
-        $class = $key > 0 ? "item-{$key} item-row" : "item-{$key}";
+        if( $key == 0){
+          // Left side
+          $outer_class = "item-{$key}";
+          $inner_class = "";
 
-        echo sprintf('<div class="%s"><div class="item-cell"><img src="%s"></div><div class="item-cell"><span class="tagline">%s <span class="citation">%s</span></span></div></div>',
-          $class,
+        } else {
+          // Right side
+          $outer_class = "item-{$key} item-row";
+          $inner_class = " class=\"item-cell\"";
+
+        }
+
+        echo sprintf('<div class="%s"><div%s><img src="%s"></div><div%s><span class="tagline">%s <span class="citation">%s</span></span></div></div>',
+          $outer_class,
+          $inner_class,
           $value['image']['url'],
+          $inner_class,
           $value['title'],
           $value['source']
         );
 
         if($key == 0){
-          echo '</div>';
+          ?></div><?php
         }
 
       }

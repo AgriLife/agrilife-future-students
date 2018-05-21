@@ -1,3 +1,8 @@
+/*
+Large break point: 1140px;
+Medium break point: 45.063em;
+*/
+
 .entry-header {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -5,6 +10,11 @@
   overflow: hidden;
 	position: relative;
 }
+
+.entry-header:before {
+	display: none;
+}
+
 .entry-header img {
   width: 100%;
 }
@@ -15,27 +25,13 @@
 	top: 45%;
 	z-index: 1;
 	color: #fff;
-	width: 600px;
-	padding-left: 45px;
+	padding: 16px 32px;
 	font-size: 2.5rem;
-	line-height: 90px;
 	margin: 0;
-}
-
-.entry-header:before {
-	content: "";
-	display: block;
-	position: absolute;
-	z-index: 1;
-	top: 45%;
-	left: -10%;
-	width: 680px;
-	height: 90px;
-	-ms-transform: skew(-20deg, 0deg); /* IE 9 */
-	-webkit-transform: skew(-20deg, 0deg); /* Safari */
-	transform: skew(-20deg, 0deg);
+	width: 100%;
+	line-height: 1.2;
+	text-align: center;
 	background: rgba(94, 86, 78, .9);
-	box-shadow: 5px 0 rgba(80, 0, 0, .7);
 }
 
 .entry-content h2 {
@@ -43,7 +39,12 @@
 }
 
 .entry-content > div {
-	margin: 45px;
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+
+.entry-content > div.summaries.row {
+	max-width: 66rem;
 }
 
 .entry-content a.button,
@@ -52,7 +53,6 @@
 	border-radius: 0;
 	text-align: center;
 	width: 100%;
-	height: 48px;
 	line-height: 48px;
 	text-transform: uppercase;
 	background-color: transparent;
@@ -70,21 +70,17 @@
 }
 
 .entry-content .student-status {
-	white-space: nowrap;
+	margin-left: -4px;
+	margin-right: -4px;
 }
 
 .entry-content .student-status div {
 	display: inline-block;
 	width: 25%;
-	padding-left: 8px;
+	padding-left: 4px;
+	padding-right: 4px;
 	box-sizing: border-box;
 }
-
-.entry-content .student-status div:first-child {
-	padding-left: 0;
-}
-
-.entry-content .student-status a.button {}
 
 .entry-content .summaries .one-of-two {
 	display: inline-block;
@@ -93,13 +89,13 @@
 	padding-left: 24px;
 }
 
-.entry-content .summaries .one-of-two p {
-	margin-bottom: 0;
-}
-
 .entry-content .summaries .one-of-two:first-child {
 	padding-left: 0;
 	padding-right: 24px;
+}
+
+.entry-content .summaries p {
+	margin-bottom: 0;
 }
 
 .entry-content .course-buttons a.button {
@@ -115,19 +111,18 @@
 .entry-content .campus-info {
   margin-left: -1rem;
   margin-right: -1rem;
-	height: 442px;
+	padding: 15px;
 	overflow: hidden;
 	position: relative;
-	padding-top: 91px;
-	padding-right: 43px;
 	box-sizing: border-box;
 	white-space: nowrap;
 	text-align: right;
   background-position: center center;
+  background-size: cover;
 }
 
 .entry-content .campus-info .actions,
-.entry-content .campus-info > a.button {
+.entry-content .campus-info .second-button {
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
@@ -146,10 +141,7 @@
 	margin-top: 0;
 }
 
-.entry-content .campus-info > a.button {
-	width: auto;
-	margin-left: 16px;
-	max-width: 338px;
+.entry-content .campus-info .second-button {
 	border: 0 none;
 }
 
@@ -177,7 +169,7 @@
 	vertical-align: top;
 }
 
-.entry-content .national-recognition .left-side {
+.entry-content .national-recognition .left-side .item-0 {
 	position: relative;
 }
 
@@ -187,7 +179,7 @@
 
 .entry-content .national-recognition .left-side .tagline {
 	position: absolute;
-	top: 100px;
+	bottom: 0;
 	height: 90px;
 	left: 0;
 	width: 100%;
@@ -223,4 +215,114 @@
 	max-width: 275px;
 	margin-right: 25px;
 	float: left;
+}
+
+/* Small screens */
+@media all and (max-width: 45.062em){
+
+	.entry-content .student-status div {
+		width: 50%;
+		padding-bottom: 8px;
+	}
+
+	.entry-content .student-status div + div + div {
+		padding-bottom: 0;
+	}
+
+	.entry-content > div.summaries.row .columns {
+		margin-top: 20px;
+	}
+
+	.entry-content > div.summaries.row .columns:first-child {
+		margin-top: 0;
+	}
+
+	.entry-content .course-buttons a.button {
+		width: 100%;
+	}
+
+	.entry-content .campus-info {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.entry-content .campus-info > .actions,
+	.entry-content .campus-info .second-button {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 8px;
+	}
+
+	.entry-content .campus-info .second-button {
+		margin-bottom: 0;
+	}
+
+	.entry-content .national-recognition .left-side,
+	.entry-content .national-recognition .right-side {
+		width: 100%;
+		padding-left: 0;
+		display: table-row;
+		clear: both;
+	}
+
+	.entry-content .national-recognition .left-side .item-0,
+	.entry-content .national-recognition .right-side .item-row .item-cell {
+		text-align: center;
+	}
+
+	.entry-content .national-recognition .left-side img,
+	.entry-content .national-recognition .right-side .item-row .item-cell:first-child img {
+		max-width: 100%;
+		margin-top: 20px;
+		display: inline-block;
+	}
+
+	.entry-content .national-recognition .right-side img {
+		margin-right: 0;
+	}
+
+	.entry-content .national-recognition .right-side .item-cell {
+		display: table-row;
+	}
+}
+
+/* Medium up */
+@media all and (min-width: 45.063em){
+
+	.entry-header:before {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 45%;
+		left: -10%;
+		width: 680px;
+		height: 90px;
+		-ms-transform: skew(-20deg, 0deg); /* IE 9 */
+		-webkit-transform: skew(-20deg, 0deg); /* Safari */
+		transform: skew(-20deg, 0deg);
+		background: rgba(94, 86, 78, .9);
+		box-shadow: 5px 0 rgba(80, 0, 0, .7);
+	}
+
+	.entry-header h1 {
+		width: 600px;
+		line-height: 90px;
+		padding: 0 0 0 45px;
+		text-align: left;
+		background: transparent;
+	}
+
+	.entry-content .campus-info {
+		height: 442px;
+		padding-top: 91px;
+		padding-right: 43px;
+	}
+
+	.entry-content .campus-info .second-button {
+		margin-left: 16px;
+		max-width: 338px;
+	}
+
 }
