@@ -1,0 +1,362 @@
+/*
+Large break point: 1140px;
+Medium break point: 45.063em;
+*/
+
+$medium: 45.063em;
+$large: 1140px;
+
+.entry-header {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  height: 336px;
+  overflow: hidden;
+	position: relative;
+  background-position: center center;
+  background-size: cover;
+
+  &:before {
+		display: none;
+	}
+
+	img {
+	  width: 100%;
+	}
+
+	h1 {
+		position: absolute;
+		left: 0;
+		top: 45%;
+		z-index: 1;
+		color: #fff;
+		padding: 16px 32px;
+		font-size: 2.5rem;
+		margin: 0;
+		width: 100%;
+		line-height: 1.2;
+		text-align: center;
+		background: rgba(94, 86, 78, .9);
+	}
+}
+
+.entry-content {
+
+	h2 {
+		color: #500000;
+	}
+
+	& > div {
+		margin-top: 45px;
+		margin-bottom: 45px;
+
+		&.summaries.row {
+			max-width: 66rem;
+		}
+	}
+
+	a.button,
+	a.button:hover {
+		border: 1px solid #5f564f;
+		border-radius: 0;
+		text-align: center;
+		width: 100%;
+		line-height: 48px;
+		text-transform: uppercase;
+		background-color: transparent;
+		background-image: none;
+		color: #000;
+		padding: 0;
+		margin: 0;
+		border-width: 1px 1px 1px 1px;
+		box-shadow: none;
+	}
+
+	a.button:hover {
+		background-color: #5f564f;
+		color: #fff;
+	}
+
+	.student-status {
+		margin-left: -4px;
+		margin-right: -4px;
+
+		div {
+			display: inline-block;
+			width: 50%;
+			padding-bottom: 8px;
+			padding-left: 4px;
+			padding-right: 4px;
+			box-sizing: border-box;
+
+			& + div + div {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.summaries {
+		.one-of-two {
+			display: inline-block;
+			width: 50%;
+			box-sizing: border-box;
+			padding-left: 24px;
+
+			&:first-child {
+				padding-left: 0;
+				padding-right: 24px;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		&.row .columns {
+			margin-top: 20px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.course-buttons {
+		margin-bottom: 0;
+
+		a.button {
+		  display: block;
+			margin: 8px auto 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.campus-info {
+	  margin-top: 0;
+		padding: 8px 0 15px;
+		overflow: hidden;
+		position: relative;
+		box-sizing: border-box;
+		white-space: nowrap;
+		text-align: right;
+	  background-position: center center;
+	  background-size: cover;
+
+		.actions,
+		.second-button {
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+		}
+
+		.actions {
+			width: 276px;
+			white-space: normal;
+
+			a {
+				margin-top: 8px;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.second-button {
+			border: 0 none;
+		}
+	}
+
+	.national-recognition {
+		white-space: nowrap;
+
+		.item-row {
+			display: table-row;
+		}
+
+		.tagline {
+			font-weight: bold;
+		}
+
+		.citation {
+			font-weight: normal;
+			display: block;
+			font-style: italic;
+		}
+
+		.left-side,
+		.right-side {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		.left-side {
+			.item-0 {
+				position: relative;
+			}
+
+			img {
+				max-width: 332px;
+			}
+
+			.tagline {
+				position: absolute;
+				bottom: 0;
+				height: 90px;
+				left: 0;
+				width: 100%;
+				display: block;
+				padding: 10px 16px;
+				box-sizing: border-box;
+			}
+		}
+
+		.right-side {
+			padding-left: 16px;
+			width: 686px;
+			box-sizing: border-box;
+			white-space: normal;
+
+			.item-cell {
+				display: table-cell;
+				vertical-align: top;
+				padding-top: 16px;
+
+				&:after {
+					content: "";
+					display: block;
+					clear: both;
+				}
+			}
+
+			.item-row:first-child .item-cell {
+				padding-top: 0;
+			}
+
+			img {
+				max-width: 275px;
+				margin-right: 25px;
+				float: left;
+			}
+		}
+	}
+}
+
+/* Small screens */
+@media all and (max-width: 45.062em){
+
+	.entry-content {
+
+		.campus-info > .actions,
+		.campus-info .second-button {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			margin: 0 0 8px;
+		}
+
+		.campus-info .second-button {
+			margin-bottom: 0;
+		}
+
+		.national-recognition .left-side,
+		.national-recognition .right-side {
+			width: 100%;
+			padding-left: 0;
+			display: table-row;
+			clear: both;
+		}
+
+		.national-recognition .left-side .item-0,
+		.national-recognition .right-side .item-row .item-cell {
+			text-align: center;
+		}
+
+		.national-recognition .left-side img,
+		.national-recognition .right-side .item-row .item-cell:first-child img {
+			max-width: 100%;
+			margin-top: 20px;
+			display: inline-block;
+		}
+
+		.national-recognition .right-side img {
+			margin-right: 0;
+		}
+
+		.national-recognition .right-side .item-cell {
+			display: table-row;
+		}
+	}
+}
+
+@media all and (min-width: #{$medium}){
+
+	.entry-header {
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 45%;
+			left: -10%;
+			width: 680px;
+			height: 90px;
+			-ms-transform: skew(-20deg, 0deg); /* IE 9 */
+			-webkit-transform: skew(-20deg, 0deg); /* Safari */
+			transform: skew(-20deg, 0deg);
+			background: rgba(94, 86, 78, .9);
+			box-shadow: 5px 0 rgba(80, 0, 0, .7);
+		}
+
+		h1 {
+			width: 600px;
+			line-height: 90px;
+			padding: 0 0 0 45px;
+			text-align: left;
+			background: transparent;
+		}
+	}
+
+	.entry-content {
+
+		& > div.summaries.row .columns {
+			margin-top: 0;
+		}
+
+		.student-status div {
+			width: 25%;
+			padding-bottom: 0;
+		}
+
+		.course-buttons {
+			margin-bottom: 45px;
+
+			a.button {
+				width: 400px;
+
+				& + a.button {
+					margin-top: 16px;
+				}
+			}
+		}
+
+		.campus-info {
+			height: 442px;
+			margin-top: 45px;
+		  margin-left: -1rem;
+		  margin-right: -1rem;
+			padding-top: 91px;
+			padding-right: 43px;
+			padding-left: 15px;
+			padding-bottom: 15px;
+
+			.second-button {
+				margin-left: 16px;
+				max-width: 338px;
+			}
+		}
+	}
+}

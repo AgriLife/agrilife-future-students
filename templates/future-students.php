@@ -26,25 +26,66 @@ function fc_enqueue_styles(){
   wp_enqueue_style( 'future-student-styles' );
 
   // Add header background image to page
-  if ( get_field( 'header_image' ) ){
-    $img = get_field( 'header_image' );
+  $image = get_field( 'header_image' );
+
+  if ( $image ){
+
+    // Set mobile image size
+    $mobile_url = $image['sizes']['medium_large'];
+
+    // Set desktop image size as the largest size available up to their custom background
+    if( array_key_exists( 'future_student_background', $image['sizes'] ) ){
+
+      $url = $image['sizes']['future_student_background'];
+
+    } else {
+
+      $url = $image['url'];
+
+    }
+
     $custom_css = "
       .entry-header {
-          background-image: url({$img});
+          background-image: url({$mobile_url});
+      }
+
+      @media all and (min-width: 45.063em){
+        .entry-header {
+            background-image: url({$url});
+        }
       }";
+
     wp_add_inline_style( 'future-student-styles', $custom_css );
+
   }
 
   // Add campus info background image to page
   $campus_info = get_field( 'campus_info' );
 
   if( !empty($campus_info['background_image']) ){
-    $img = $campus_info['background_image'];
+
+    $campus_image = $campus_info['background_image'];
+
+    // Set desktop image size
+    if( array_key_exists( 'future_student_background', $campus_image['sizes'] ) ){
+
+      $url = $campus_image['sizes']['future_student_background'];
+
+    } else {
+
+      $url = $campus_image['url'];
+
+    }
+
     $custom_css = "
-      .entry-content .campus-info {
-          background-image: url({$img});
+      @media all and (min-width: 45.063em){
+        .entry-content .campus-info {
+            background-image: url({$url});
+        }
       }";
+
     wp_add_inline_style( 'future-student-styles', $custom_css );
+
   }
 
 }

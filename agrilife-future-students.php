@@ -27,3 +27,5 @@ add_action( 'plugins_loaded', function() {
         require_once(AG_FUST_DIR_PATH . '/fields/futurestudents-details.php');
     }
 }, 15);
+
+add_image_size( 'future_student_background', 1140, 442, array( 'center', 'center' ) );

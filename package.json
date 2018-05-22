@@ -1,0 +1,27 @@
+{
+  "name": "agrilife-future-students",
+  "version": "1.0.0",
+  "description": "Template for future students landing page",
+  "main": "agrilife-future-students.php",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agrilife/agrilife-future-students.git"
+  },
+  "author": "Zachary Watkins",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/agrilife/agrilife-future-students/issues"
+  },
+  "homepage": "https://github.com/agrilife/agrilife-future-students#readme",
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compass": "^1.1.1"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "devDependencies": {
+    "grunt-sass-lint": "^0.2.2"
+  }
+}
