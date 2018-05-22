@@ -2,11 +2,11 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_5afdb777acb68',
 	'title' => 'Future Students Template',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_5afdb7a31c52c',
 			'label' => 'Header Image',
 			'name' => 'header_image',
@@ -14,7 +14,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -30,7 +30,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5afdb8f11c52d',
 			'label' => 'Summary 1',
 			'name' => 'summary_1',
@@ -38,7 +38,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -49,7 +49,7 @@ acf_add_local_field_group(array (
 			'media_upload' => 0,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5afdbb2e1c52e',
 			'label' => 'Summary 2',
 			'name' => 'summary_2',
@@ -57,7 +57,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -68,7 +68,7 @@ acf_add_local_field_group(array (
 			'media_upload' => 0,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5afdbc151c533',
 			'label' => 'Course Info',
 			'name' => 'course_info',
@@ -76,7 +76,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -86,8 +86,8 @@ acf_add_local_field_group(array (
 			'max' => 2,
 			'layout' => 'row',
 			'button_label' => 'Add',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5afdbc151c534',
 					'label' => 'Label',
 					'name' => 'label',
@@ -95,7 +95,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -106,7 +106,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5afdbc151c535',
 					'label' => 'Link',
 					'name' => 'link',
@@ -114,7 +114,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -124,7 +124,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5afdbc311c536',
 			'label' => 'Campus Info',
 			'name' => 'campus_info',
@@ -132,14 +132,14 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
 			'layout' => 'block',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5afdbc761c537',
 					'label' => 'Actions',
 					'name' => 'actions',
@@ -147,7 +147,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -157,8 +157,8 @@ acf_add_local_field_group(array (
 					'max' => 4,
 					'layout' => 'table',
 					'button_label' => 'Add',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5afdbc7e1c538',
 							'label' => 'Label',
 							'name' => 'label',
@@ -166,7 +166,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -177,7 +177,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_5afdbc891c539',
 							'label' => 'Link',
 							'name' => 'link',
@@ -185,7 +185,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -195,7 +195,7 @@ acf_add_local_field_group(array (
 						),
 					),
 				),
-				array (
+				array(
 					'key' => 'field_5afdbc9f1c53a',
 					'label' => 'Button',
 					'name' => 'button',
@@ -203,14 +203,14 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'layout' => 'block',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5afdbcc11c53b',
 							'label' => 'Image',
 							'name' => 'button_image',
@@ -218,7 +218,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -234,7 +234,7 @@ acf_add_local_field_group(array (
 							'max_size' => '',
 							'mime_types' => '',
 						),
-						array (
+						array(
 							'key' => 'field_5afdbcdc1c53c',
 							'label' => 'Link',
 							'name' => 'button_link',
@@ -242,7 +242,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -252,9 +252,33 @@ acf_add_local_field_group(array (
 						),
 					),
 				),
+				array(
+					'key' => 'field_5afefecf4a5e5',
+					'label' => 'Background Image',
+					'name' => 'background_image',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'url',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+					'min_width' => 1024,
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5afdbd721c53d',
 			'label' => 'National Recognition',
 			'name' => 'national_recognition',
@@ -262,7 +286,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -272,8 +296,8 @@ acf_add_local_field_group(array (
 			'max' => 3,
 			'layout' => 'table',
 			'button_label' => 'Add',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5afdbe5d1c542',
 					'label' => 'Image',
 					'name' => 'image',
@@ -281,7 +305,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -297,7 +321,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5afdbe6b1c543',
 					'label' => 'Title',
 					'name' => 'title',
@@ -305,7 +329,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -316,7 +340,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5afdbe701c544',
 					'label' => 'Source',
 					'name' => 'source',
@@ -324,7 +348,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -338,9 +362,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => AG_FUST_TEMPLATE_PATH . '/future-students.php',
