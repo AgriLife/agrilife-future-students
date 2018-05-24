@@ -15,7 +15,7 @@ function fc_register_styles() {
     'future-student-styles',
     AG_FUST_DIR_URL . 'css/future-students.css',
     array(),
-    '',
+    filemtime(AG_FUST_DIR_PATH . 'css/future-students.css'),
     'screen'
   );
 
@@ -110,7 +110,7 @@ function ag_fust_content()
 {
 
   ?>
-    <div class="student-status"><div><a class="button" href="#">Freshman</a></div><div><a class="button" href="#">Graduate</a></div><div><a class="button" href="#">Online</a></div><div><a class="button" href="#">Transfer</a></div></div><?php
+    <div class="student-status"><div><a class="button active" href="/freshman-student/">Freshman</a></div><div><a class="button" href="/graduate-student/">Graduate</a></div><div><a class="button" href="/online-student/">Online</a></div><div><a class="button" href="/transfer-student/">Transfer</a></div></div><?php
 
   if ( get_field( 'summary_1' ) || get_field( 'summary_2' ) ){ ?>
     <div class="summaries row"><?php
@@ -191,23 +191,27 @@ function ag_fust_content()
           ?><div class="right-side"><?php
         }
 
-        if( $key == 0){
-          // Left side
-          $outer_class = "item-{$key}";
-          $inner_class = "";
-
+        // Determine alt title for ranking image
+        if( substr($value['ranking_image'], 0) == 't'){
+          $rank_alt = 'Top ' + substr($value['ranking_image'], -2);
         } else {
-          // Right side
-          $outer_class = "item-{$key} item-row";
-          $inner_class = " class=\"item-cell\"";
-
+          $rank_alt = 'Number ' + substr($value['ranking_image'], 0);
         }
 
-        echo sprintf('<div class="%s"><div%s><img src="%s"></div><div%s><span class="tagline">%s <span class="citation">%s</span></span></div></div>',
-          $outer_class,
-          $inner_class,
+        $rank_url = AG_FUST_DIR_URL . 'img/Rankings-' . substr($value['ranking_image'], 0, 5) . '-white.png';
+
+        if( $key == 0){
+          // Left side
+          $content = '<div class="item"><img src="%s"><div class="ranking"><img src="%s" alt="%s"></div><div class="tagline">%s <span class="citation">%s</span></div></div>';
+        } else {
+          // Right side
+          $content = '<div class="item item-row"><div class="item-cell"><img src="%s"><div class="ranking"><img src="%s" alt="%s"></div></div><div class="item-cell"><div class="tagline">%s <span class="citation">%s</span></div></div></div>';
+        }
+
+        echo sprintf( $content,
           $value['image']['url'],
-          $inner_class,
+          $rank_url,
+          $rank_alt,
           $value['title'],
           $value['source']
         );

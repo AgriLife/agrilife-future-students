@@ -16,7 +16,7 @@
                     "class": "",
                     "id": ""
                 },
-                "return_format": "url",
+                "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
                 "min_width": 1140,
@@ -262,7 +262,7 @@
                             "class": "",
                             "id": ""
                         },
-                        "return_format": "url",
+                        "return_format": "array",
                         "preview_size": "thumbnail",
                         "library": "all",
                         "min_width": 1024,
@@ -294,6 +294,42 @@
                 "layout": "table",
                 "button_label": "Add",
                 "sub_fields": [
+                    {
+                        "key": "field_5b05c44645189",
+                        "label": "Ranking",
+                        "name": "ranking_image",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "1": "#1",
+                            "2": "#2",
+                            "3": "#3",
+                            "4": "#4",
+                            "5": "#5",
+                            "6": "#6",
+                            "7": "#7",
+                            "8": "#8",
+                            "9": "#9",
+                            "top10": "Top 10",
+                            "top20": "Top 20"
+                        },
+                        "default_value": [
+                            1
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "value",
+                        "placeholder": ""
+                    },
                     {
                         "key": "field_5afdbe5d1c542",
                         "label": "Image",
