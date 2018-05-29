@@ -59,7 +59,7 @@ $large: 1140px;
 	a.button,
 	a.button.active,
 	a.button:hover {
-		border: 1px solid #5f564f;
+		border: 1px solid rgba(255, 255, 255, 0.75);
 		border-radius: 0;
 		text-align: center;
 		width: 100%;
@@ -67,7 +67,7 @@ $large: 1140px;
 		text-transform: uppercase;
 		background-color: transparent;
 		background-image: none;
-		color: #000;
+		color: #FFF;
 		padding: 0;
 		margin: 0;
 		border-width: 1px 1px 1px 1px;
@@ -77,8 +77,9 @@ $large: 1140px;
 
 	a.button.active,
 	a.button:hover {
-		background-color: #5f564f;
-		color: #fff;
+		background-color: #FFF;
+		color: #000;
+		border-color: #FFF;
 	}
 
 	.student-status {
@@ -110,10 +111,6 @@ $large: 1140px;
 				padding-left: 0;
 				padding-right: 24px;
 			}
-		}
-
-		p {
-			margin-bottom: 0;
 		}
 
 		&.row .columns {
@@ -164,10 +161,6 @@ $large: 1140px;
 
 			a {
 				margin-top: 8px;
-
-				&:first-child {
-					margin-top: 0;
-				}
 			}
 		}
 
@@ -183,41 +176,25 @@ $large: 1140px;
 	}
 
 	.national-recognition {
-		text-align: center;
+		background: #500000;
+		color: #fff;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		padding: 10px;
+
+		h2 {
+			display: none;
+		}
 
 		.left-side,
 		.right-side {
-			width: 100%;
-			padding-left: 0;
-			clear: both;
+			.item-cell:first-child {
+				text-align: center;
 
-			.ranking {
-				display: none;
+				& > img {
+					display: none;
+				}
 			}
-
-			.tagline {
-				font-weight: bold;
-			}
-
-			.citation {
-				font-weight: normal;
-				display: block;
-				font-style: italic;
-			}
-		}
-
-		.left-side,
-		.right-side .item-row .item-cell {
-			text-align: center;
-		}
-
-		.left-side img,
-		.right-side .item-row .item-cell:first-child img {
-			display: inline-block;
-		}
-
-		.right-side img {
-			margin-right: 0;
 		}
 	}
 }
@@ -225,6 +202,33 @@ $large: 1140px;
 @media all and (min-width: #{$small}){
 
 	.entry-content {
+		.summaries {
+			p {
+				margin-bottom: 0;
+			}
+
+			.summary {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+				box-sizing: border-box;
+				padding: 0 12px 0 0;
+
+				& + .summary {
+					padding: 0 0 0 13px;
+				}
+			}
+		}
+
+		.course-buttons {
+			a,
+			a.active,
+			a:hover {
+				width: 100%;
+				max-width: 500px;
+			}
+		}
+
 		.campus-info {
 			padding: 32px;
 			margin: 45px -1rem 0 -1rem;
@@ -238,31 +242,62 @@ $large: 1140px;
 
 			.actions {
 				margin-top: 12px;
+
+				a:first-child {
+					margin-top: 0;
+				}
 			}
 		}
 
 		.national-recognition {
+			background: transparent;
+			color: #5E564E;
+			margin-left: 0;
+			margin-right: 0;
+
+			h2 {
+				display: block;
+			}
+
+	  	.item-row {
+	  		display: table-row;
+
+	  		.item-cell {
+			    position: relative;
+					display: table-cell;
+					vertical-align: middle;
+
+					& + .item-cell {
+						padding-left: 25px;
+					}
+				}
+			}
+
 			.left-side,
 			.right-side {
 				text-align: left;
+				width: 100%;
+				padding-left: 0;
+				clear: both;
 
-				.item {
-					position: relative;
-					vertical-align: top;
-				}
+				.item-cell:first-child {
+					width: 100%;
+					display: inline-block;
 
-				.item > img,
-				.item-row .item-cell:first-child > img {
-					width: 40%;
-					margin: 0 25px 0 0;
-					float: left;
+					& > img {
+						display: block;
+						width: 100%;
+					}
+
+					& + .item-cell {
+						width: 61%;
+					}
 				}
 
 				.ranking {
-					display: block;
 					text-align: center;
 			    position: absolute;
-			    padding: 20px 10px;
+					padding: 10px;
 			    bottom: 0;
 			    left: 0;
 
@@ -275,37 +310,41 @@ $large: 1140px;
 				  }
 				}
 
-				.tagline:after {
-					content: "";
+				.tagline {
+					font-weight: bold;
+
+					&:after {
+						content: "";
+						display: block;
+						clear: both;
+					}
+				}
+
+				.citation {
+					font-weight: normal;
 					display: block;
-					clear: both;
+					font-style: italic;
 				}
 			}
 
-			.left-side {
-				text-align: left;
+			.left-side .ranking {
+				width: 100%;
+	    	background: rgba(30, 0, 0, 0.9);
 
-				.ranking {
-					width: 40%;
-		    	background: rgba(30, 0, 0, 0.9);
-
-		    	img {
-			    	height: 80%;
-		    	}
-				}
+	    	img {
+		    	width: 75%;
+		    	position: static;
+		    	transform: none;
+	    	}
 			}
 
 			.right-side {
-				.item-row .item-cell {
-					text-align: left;
-				}
-
-				.item {
-					margin-top: 25px;
+				.item-cell {
+					border-top: 25px solid transparent;
 				}
 
 				.ranking {
-					width: 20%;
+					width: 45%;
 					height: 100%;
 					background: rgba(0, 0, 0, 0.75);
 
@@ -400,10 +439,6 @@ $large: 1140px;
 			white-space: nowrap;
   		text-align: left;
 
-			.item-row {
-				display: table-row;
-			}
-
 			.left-side,
 			.right-side {
 				display: table-cell;
@@ -423,21 +458,40 @@ $large: 1140px;
   		.left-side {
   			$tagline-height: 90px;
 
-				.item {
-					position: relative;
+				.item-row .item-cell {
+					overflow: visible;
+					height: auto;
+					display: block;
+					padding-right: 0;
 
-	    		& > img {
-				    max-width: 332px;
-				    margin-top: 0;
-				  }
+	    		&:first-child {
+	    			width: auto;
+
+	    			> img {
+		    			width: 100%;
+					    max-width: 332px;
+					    margin-top: 0;
+					    margin-right: 0;
+					    float: none;
+					  }
+					}
+
+					&:first-child + .item-cell {
+						padding-left: 0;
+						width: 100%;
+					}
 				}
 
 			  .ranking {
-			    bottom: $tagline-height;
+			    bottom: 0;
+			    width: 100%;
 
 			  	img {
+			  		height: 100%;
 				    max-width: 220px;
 				    max-height: 85px;
+				    position: static;
+				    transform: none;
 				  }
 				}
 
@@ -458,16 +512,22 @@ $large: 1140px;
 				white-space: normal;
 
 		  	.item-row .item-cell {
-			    position: relative;
-					display: table-cell;
-					vertical-align: top;
+					border-top: 0 none;
 
-					&:first-child > img {
-						width: 100%;
-						max-width: 275px;
-						margin-right: 25px;
-						margin-top: 0;
-						float: left;
+					&:first-child {
+						width: 40%;
+
+						&, & + .item-cell {
+							width: auto;
+						}
+
+						& > img {
+							width: auto;
+							max-width: 275px;
+							margin-top: 0;
+							margin-right: 0;
+							float: none;
+						}
 					}
 
 					&:after {
@@ -479,6 +539,7 @@ $large: 1140px;
 				  .ranking {
 				    position: absolute;
 				    left: 0;
+				    width: 47%;
 				    height: 100%;
 				    padding: 10px;
 				    line-height: 175px;
@@ -486,7 +547,9 @@ $large: 1140px;
 				    background: rgba(0, 0, 0, 0.75);
 
 				    img {
-				    	max-width: 125px;
+				    	width: 100%;
+				    	position: static;
+				    	transform: none;
 				    }
 				  }
 				}
