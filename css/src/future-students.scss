@@ -3,7 +3,9 @@ Large break point: 1140px;
 Medium break point: 45.063em;
 */
 
+$small: 400px;
 $medium: 45.063em;
+$medium_large: 900px;
 $large: 1140px;
 
 .entry-header {
@@ -149,13 +151,15 @@ $large: 1140px;
 
 		.actions,
 		.second-button {
-			display: inline-block;
 			vertical-align: top;
 			text-align: center;
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			margin: 0 0 8px;
 		}
 
 		.actions {
-			width: 276px;
 			white-space: normal;
 
 			a {
@@ -168,11 +172,12 @@ $large: 1140px;
 		}
 
 		.second-button {
-			border: 0 none;
 			text-align: center;
+			margin-bottom: 0;
 
 			a.button {
 				width: auto;
+				border: 0 none;
 			}
 		}
 	}
@@ -180,66 +185,141 @@ $large: 1140px;
 	.national-recognition {
 		text-align: center;
 
-		.ranking {
-			display: none;
-		}
-
-		.tagline {
-			font-weight: bold;
-		}
-
-		.citation {
-			font-weight: normal;
-			display: block;
-			font-style: italic;
-		}
-	}
-}
-
-/* Small screens */
-@media all and (max-width: 45.062em){
-
-	.entry-content {
-
-		.campus-info > .actions,
-		.campus-info .second-button {
-			display: block;
-			width: 100%;
-			max-width: 100%;
-			margin: 0 0 8px;
-		}
-
-		.campus-info .second-button {
-			margin-bottom: 0;
-		}
-
-		.national-recognition .left-side,
-		.national-recognition .right-side {
+		.left-side,
+		.right-side {
 			width: 100%;
 			padding-left: 0;
-			display: table-row;
 			clear: both;
+
+			.ranking {
+				display: none;
+			}
+
+			.tagline {
+				font-weight: bold;
+			}
+
+			.citation {
+				font-weight: normal;
+				display: block;
+				font-style: italic;
+			}
 		}
 
-		.national-recognition .left-side,
-		.national-recognition .right-side .item-row .item-cell {
+		.left-side,
+		.right-side .item-row .item-cell {
 			text-align: center;
 		}
 
-		.national-recognition .left-side img,
-		.national-recognition .right-side .item-row .item-cell:first-child img {
-			max-width: 100%;
-			margin-top: 20px;
+		.left-side img,
+		.right-side .item-row .item-cell:first-child img {
 			display: inline-block;
 		}
 
-		.national-recognition .right-side img {
+		.right-side img {
 			margin-right: 0;
 		}
 	}
 }
 
-@media all and (min-width: #{$medium}){
+@media all and (min-width: #{$small}){
+
+	.entry-content {
+		.campus-info {
+			padding: 32px;
+			margin: 45px -1rem 0 -1rem;
+
+			.second-button,
+			.actions {
+				width: 314px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.actions {
+				margin-top: 12px;
+			}
+		}
+
+		.national-recognition {
+			.left-side,
+			.right-side {
+				text-align: left;
+
+				.item {
+					position: relative;
+					vertical-align: top;
+				}
+
+				.item > img,
+				.item-row .item-cell:first-child > img {
+					width: 40%;
+					margin: 0 25px 0 0;
+					float: left;
+				}
+
+				.ranking {
+					display: block;
+					text-align: center;
+			    position: absolute;
+			    padding: 20px 10px;
+			    bottom: 0;
+			    left: 0;
+
+			    img {
+			    	margin: 0;
+			    	position: absolute;
+				    left: 50%;
+				    top: 50%;
+				    transform: translate(-50%, -50%);
+				  }
+				}
+
+				.tagline:after {
+					content: "";
+					display: block;
+					clear: both;
+				}
+			}
+
+			.left-side {
+				text-align: left;
+
+				.ranking {
+					width: 40%;
+		    	background: rgba(30, 0, 0, 0.9);
+
+		    	img {
+			    	height: 80%;
+		    	}
+				}
+			}
+
+			.right-side {
+				.item-row .item-cell {
+					text-align: left;
+				}
+
+				.item {
+					margin-top: 25px;
+				}
+
+				.ranking {
+					width: 20%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.75);
+
+					img {
+			    	width: 80%;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media all and (min-width: #{$medium_large}){
 
 	.entry-header:before {
 		content: "";
@@ -290,28 +370,35 @@ $large: 1140px;
 
 		.campus-info {
 	    height: 442px;
-	    margin-top: 45px;
-	    margin-left: -1rem;
-	    margin-right: -1rem;
-	    padding-top: 91px;
-	    padding-right: 43px;
-	    padding-left: 15px;
-	    padding-bottom: 15px;
-		}
+	    padding: 91px 43px 15px 15px;
+	    text-align: right;
 
-		.campus-info .second-button {
-			margin-left: 16px;
-			max-width: 338px;
+	    &:after {
+	    	content: "";
+	    	display: block;
+	    	clear: both;
+	    }
+
+	    .actions {
+	    	display: inline-block;
+				width: 276px;
+				margin: 0;
+	    }
+
+	    .second-button {
+	    	float: right;
+				margin-left: 16px;
+				width: auto;
+
+				img {
+					height: 224px;
+				}
+			}
 		}
 
   	.national-recognition {
 			white-space: nowrap;
   		text-align: left;
-
-  		.ranking {
-  			display: block;
-  			text-align: center;
-  		}
 
 			.item-row {
 				display: table-row;
@@ -321,6 +408,16 @@ $large: 1140px;
 			.right-side {
 				display: table-cell;
 				vertical-align: top;
+				width: auto;
+
+				&,
+				.item-row .item-cell {
+					text-align: left;
+				}
+
+	  		.ranking {
+	  			text-align: center;
+	  		}
 			}
 
   		.left-side {
@@ -336,12 +433,7 @@ $large: 1140px;
 				}
 
 			  .ranking {
-			    display: block;
-			    position: absolute;
-			    width: 100%;
-			    padding: 20px 10px;
 			    bottom: $tagline-height;
-			    background: rgba(30, 0, 0, 0.9);
 
 			  	img {
 				    max-width: 220px;
@@ -365,14 +457,16 @@ $large: 1140px;
 				box-sizing: border-box;
 				white-space: normal;
 
-		  	.item-cell {
+		  	.item-row .item-cell {
 			    position: relative;
 					display: table-cell;
 					vertical-align: top;
 
 					&:first-child > img {
+						width: 100%;
 						max-width: 275px;
 						margin-right: 25px;
+						margin-top: 0;
 						float: left;
 					}
 

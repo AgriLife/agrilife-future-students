@@ -78,7 +78,7 @@ function fc_enqueue_styles(){
     }
 
     $custom_css = "
-      @media all and (min-width: 45.063em){
+      @media all and (min-width: 400px){
         .entry-content .campus-info {
             background-image: url({$url});
         }
@@ -139,21 +139,10 @@ function ag_fust_content()
   <?php }
 
   if ( get_field( 'campus_info' ) ){ ?>
+
     <div class="campus-info"><?php
+
     $campus_info = get_field('campus_info');
-
-    ?><div class="actions"><?php
-
-    foreach ($campus_info['actions'] as $key => $value) {
-
-      echo sprintf('<a class="button" href="%s">%s</a>',
-        $value['link'],
-        $value['label']
-      );
-
-    }
-
-      ?></div><?php
 
     if(!empty($campus_info['button']['button_image'])){
 
@@ -176,10 +165,29 @@ function ag_fust_content()
 
     }
 
-    ?></div>
-  <?php }
+    if(!empty($campus_info['actions'])){
+
+      ?><div class="actions"><?php
+
+      foreach ($campus_info['actions'] as $key => $value) {
+
+        echo sprintf('<a class="button" href="%s">%s</a>',
+          $value['link'],
+          $value['label']
+        );
+
+      }
+
+      ?></div><?php
+
+    }
+
+    ?></div><?php
+
+  }
 
   if ( get_field( 'national_recognition' ) ){ ?>
+
     <div class="national-recognition"><h2>National Recognition</h2><div class="item-row"><?php
 
       $items = get_field( 'national_recognition' );
