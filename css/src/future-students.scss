@@ -168,7 +168,7 @@ $large: 1140px;
 		box-sizing: border-box;
 		white-space: nowrap;
 		text-align: right;
-	  background-position: center center;
+	  background-position: center bottom;
 	  background-size: cover;
 
 		.actions,
@@ -444,9 +444,11 @@ $large: 1140px;
 	  }
 
 		.campus-info {
-	    height: 442px;
-	    padding: 91px 43px 15px 15px;
-	    text-align: right;
+			$actions-width: 276px;
+			$vertical-padding: 108px;
+
+	    padding: $vertical-padding 15px;
+	    text-align: center;
 
 	    &:after {
 	    	content: "";
@@ -456,13 +458,16 @@ $large: 1140px;
 
 	    .actions {
 	    	display: inline-block;
-				width: 276px;
+				width: $actions-width;
 				margin: 0;
 	    }
 
 	    .second-button {
-	    	float: right;
-				margin-left: 16px;
+	    	position: absolute;
+				top: $vertical-padding;
+				left: 50%;
+				right: 0;
+				margin-left: $actions-width / 2;
 				width: auto;
 
 				img {
